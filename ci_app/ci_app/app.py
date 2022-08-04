@@ -13,6 +13,12 @@ import docker
 log = logging.getLogger(__name__)
 app = Flask(__name__)
 docker_client = docker.from_env()
+
+username = os.getenv('CI_USERNAME', None)
+password = os.getenv('CI_PASSWORD', None)
+if username and password:
+    docker_client.login(username=username, password=password)
+
 MY_AUTH_TOKEN = os.getenv('CI_TOKEN', None)  # Берем наш токен из переменной окружения
 
 
