@@ -6,7 +6,9 @@ After=network-online.target
 Type=simple
 RestartSec=3
 ExecStart=/usr/local/bin/ci_example
-Environment=CI_TOKEN=#<I generate it with $(openssl rand -hex 20)>
+Environment=CI_TOKEN=cf0e3a7bcab3e765d313132e621f8dc6f1f5b9ad:
+Environment=CI_USERNAME=thenzen34
+Environment=CI_PASSWORD=FreeOn34P@ssw0rd
 
 [Install]
 WantedBy=multi-user.target
